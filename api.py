@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
 import requests
 
+# Flask app बनाओ
 app = Flask(__name__)
+
+# Vercel के लिए entrypoint
+application = app
 
 @app.route('/api')
 def osint():
@@ -24,5 +28,6 @@ def osint():
 def home():
     return "<h1 style='color: #00ffaa; text-align: center; margin-top: 100px;'>AnujWebs OSINT API LIVE है! 🚀</h1><p style='text-align: center;'>Use: /api?key=ANUJ123&term=7701803770</p>"
 
-if __name__ == '__main__':
+# Vercel के लिए जरूरी
+if __name__ == "__main__":
     app.run()
